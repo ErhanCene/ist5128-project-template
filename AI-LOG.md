@@ -4,13 +4,13 @@ One entry per piece of work where an AI assistant helped: what you asked, what y
 changed, and how you checked. Short and factual. Use you did not record, or results you cannot
 explain, lose points (course syllabus, "Using AI").
 
-## <date> · <what you were doing>
+## [date] · [what you were doing]
 
-- **Tool:** <assistant and, if you know it, the model>
-- **Prompt:** "<the key prompt, or a short summary of a longer exchange>"
-- **Accepted:** <what you used as it came>
-- **Rejected or corrected:** <what was wrong, and what you did instead>
-- **Checked:** <how you know the result is right: counts, totals, a recomputed number, the docs>
+- **Tool:** [assistant and, if you know it, the model]
+- **Prompt:** "[the key prompt, or a short summary of a longer exchange]"
+- **Accepted:** [what you used as it came]
+- **Rejected or corrected:** [what was wrong, and what you did instead]
+- **Checked:** [how you know the result is right: counts, totals, a recomputed number, the docs]
 
 <!-- An example of a finished entry (delete it when you write your own):
 

@@ -1,7 +1,7 @@
 ---
-title: "<Project title>"
+title: "[Project title]"
 subtitle: "IST5128 · Project 1"
-author: "<your name(s)>"
+author: "[your name(s)]"
 date: today
 output-file: index.html
 ---
@@ -18,7 +18,7 @@ so the report renders from a fresh clone.
 
 ## The question
 
-<What do you want to know, and who needs the answer? Two to four sentences.>
+[What do you want to know, and who needs the answer? Two to four sentences.]
 
 ## The data
 
@@ -37,22 +37,22 @@ the result is right: totals checked against the published ones, counts, spot che
 
 ## Graphs
 
-### Graph 1: <its question>
+### Graph 1: [its question]
 
 <The final graph, then its design record: the question, the sketch, the first version, the
 critique, what changed. Images of the sketch and the first version live in `design/`.>
 
-### Graph 2: <its question>
+### Graph 2: [its question]
 
-### Graph 3: <its question>
+### Graph 3: [its question]
 
 ## Findings
 
-<What the graphs show, in plain words, and what they cannot show.>
+[What the graphs show, in plain words, and what they cannot show.]
 
 ## Limitations
 
-<What the data or the methods cannot support.>
+[What the data or the methods cannot support.]
 
 ## Use of AI
 
@@ -60,4 +60,4 @@ See `AI-LOG.md`.
 
 ## References
 
-<The data sources and anything else you used.>
+[The data sources and anything else you used.]

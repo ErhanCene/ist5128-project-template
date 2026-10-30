@@ -1,17 +1,17 @@
-# <Project title>
+# [Project title]
 
-IST5128 · Project 1 · <your name(s)>
+IST5128 · Project 1 · [your name(s)]
 
-**Question.** <One or two sentences: what the project asks, and for whom.>
+**Question.** [One or two sentences: what the project asks, and for whom.]
 
-**Data.** <Source, with a link, the licence, and the date you downloaded it.>
+**Data.** [Source, with a link, the licence, and the date you downloaded it.]
 
-**Report.** https://<your-user>.github.io/<this-repository>/
+**Report.** https://YOUR-USER.github.io/YOUR-REPOSITORY/
 
 ## Reproduce it
 
 1. Clone the repository.
-2. Install what the code needs: <R packages / Python packages, or the file that lists them>.
+2. Install what the code needs: [R packages / Python packages, or the file that lists them].
 3. In this folder, run:
 
    ```bash
