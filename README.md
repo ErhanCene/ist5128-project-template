@@ -22,15 +22,19 @@ IST5128 · Project 1 · [your name(s)]
 
 ## Publish it
 
-Commit and push your work first, then, in this folder:
+Every push to `main` publishes the report by itself: the workflow in
+`.github/workflows/publish.yml` renders `report.qmd` with Quarto and puts the result on the
+`gh-pages` branch, which GitHub Pages serves at the address above. The **Actions** tab shows each
+run; the first one takes a few minutes. Packages beyond ggplot2 and rmarkdown (R) or pandas and
+plotnine (Python) go one per line in `r-packages.txt` or `requirements.txt`.
+
+You can also publish from your computer, after committing and pushing, in this folder:
 
 ```bash
 quarto publish gh-pages
 ```
 
-Quarto renders the report and puts it on the `gh-pages` branch; GitHub Pages serves it at the
-address above. Run it again after every change you want online. `_output/` is never committed:
-the `gh-pages` branch holds the published copy.
+`_output/` is never committed: the `gh-pages` branch holds the published copy.
 
 ## What is where
 

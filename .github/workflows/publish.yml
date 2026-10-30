@@ -1,0 +1,83 @@
+name: Publish the report
+
+# Every push to main renders report.qmd with Quarto and puts the result on the
+# gh-pages branch, which GitHub Pages serves at https://<user>.github.io/<repository>/.
+# `quarto publish gh-pages` on your computer does the same; the last one to run wins.
+# R or Python is set up only when report.qmd has {r} or {python} chunks. More packages:
+# list them one per line in r-packages.txt (R) or requirements.txt (Python).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    # The course template itself is not a report.
+    if: ${{ !github.event.repository.is_template }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Which language does the report use?
+        id: lang
+        run: |
+          if grep -q '^```{r' report.qmd; then echo "r=true" >> "$GITHUB_OUTPUT"; fi
+          if grep -q '^```{python' report.qmd; then echo "python=true" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up R
+        if: steps.lang.outputs.r == 'true'
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install the R packages
+        if: steps.lang.outputs.r == 'true'
+        shell: Rscript {0}
+        run: |
+          pkgs <- c("rmarkdown", "knitr", "ggplot2")
+          if (file.exists("r-packages.txt")) pkgs <- c(pkgs, trimws(readLines("r-packages.txt")))
+          pkgs <- setdiff(pkgs[nzchar(pkgs)], rownames(installed.packages()))
+          if (length(pkgs)) install.packages(pkgs)
+
+      - name: Set up Python
+        if: steps.lang.outputs.python == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the Python packages
+        if: steps.lang.outputs.python == 'true'
+        run: |
+          python -m pip install --quiet jupyter pandas plotnine
+          if [ -f requirements.txt ]; then python -m pip install --quiet -r requirements.txt; fi
+
+      - name: Render the report
+        run: quarto render
+
+      - name: Put it on gh-pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch --depth 1 origin gh-pages; then
+            git worktree add ../site FETCH_HEAD
+            git -C ../site switch -c gh-pages
+          else
+            git worktree add --orphan -b gh-pages ../site
+          fi
+          find ../site -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -r _output/. ../site/
+          touch ../site/.nojekyll
+          cd ../site
+          git add -A
+          if git diff --cached --quiet; then echo "Nothing new to publish."; exit 0; fi
+          git commit -m "Publish the report from ${GITHUB_SHA::7}"
+          git push origin gh-pages
