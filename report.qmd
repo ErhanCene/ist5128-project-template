@@ -22,25 +22,29 @@ so the report renders from a fresh clone.
 
 ## The data
 
-<Source (link), publisher, licence, date downloaded. What one row is. How many rows and columns the
-raw files have.>
+[Source (link), publisher, licence, date downloaded. What one row is. How many rows and columns the
+raw files have.]
 
 ## The audit
 
-<What is wrong with the raw data, and how you found it: header rows, footnote marks, codes for
-missing values, names that do not match, duplicates, impossible values. Show the counts.>
+[What is wrong with the raw data, and how you found it: header rows, footnote marks, codes for
+missing values, names that do not match, duplicates, impossible values. Show the counts.]
 
 ## Cleaning
 
-<A summary of the steps; the full list with row counts is in `docs/cleaning-log.md`. How you know
-the result is right: totals checked against the published ones, counts, spot checks.>
+[A summary of the steps; the full list with row counts is in `docs/cleaning-log.md`. How you know
+the result is right: totals checked against the published ones, counts, spot checks.]
 
 ## Graphs
 
 ### Graph 1: [its question]
 
-<The final graph, then its design record: the question, the sketch, the first version, the
-critique, what changed. Images of the sketch and the first version live in `design/`.>
+<!-- In-class 2 (card A): put your final code from Prompt 2 here, in an R or a Python code chunk.
+In R, start the chunk with library(ggplot2); the data is ggplot2's mpg. In Python, import pandas and
+plotnine, and read the data with pd.read_csv("data/example/mpg.csv"). Then give the report its title. -->
+
+[The final graph, then its design record: the question, the sketch, the first version, the
+critique, what changed. Images of the sketch and the first version live in `design/`.]
 
 ### Graph 2: [its question]
 
