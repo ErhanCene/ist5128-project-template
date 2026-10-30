@@ -1,0 +1,63 @@
+---
+title: "<Project title>"
+subtitle: "IST5128 · Project 1"
+author: "<your name(s)>"
+date: today
+output-file: index.html
+---
+
+<!--
+Code goes into chunks: a line of three backticks followed by {r} (or {python}), the code, and a
+line of three backticks. For example, read_csv("data/raw/<file>.csv") from readr in R, or
+pd.read_csv("data/raw/<file>.csv") in Python.
+
+Use one language per report (Quarto runs R chunks with knitr and Python chunks with Jupyter), or
+keep the heavy work in scripts and read their output here. Every path is relative to this folder,
+so the report renders from a fresh clone.
+-->
+
+## The question
+
+<What do you want to know, and who needs the answer? Two to four sentences.>
+
+## The data
+
+<Source (link), publisher, licence, date downloaded. What one row is. How many rows and columns the
+raw files have.>
+
+## The audit
+
+<What is wrong with the raw data, and how you found it: header rows, footnote marks, codes for
+missing values, names that do not match, duplicates, impossible values. Show the counts.>
+
+## Cleaning
+
+<A summary of the steps; the full list with row counts is in `docs/cleaning-log.md`. How you know
+the result is right: totals checked against the published ones, counts, spot checks.>
+
+## Graphs
+
+### Graph 1: <its question>
+
+<The final graph, then its design record: the question, the sketch, the first version, the
+critique, what changed. Images of the sketch and the first version live in `design/`.>
+
+### Graph 2: <its question>
+
+### Graph 3: <its question>
+
+## Findings
+
+<What the graphs show, in plain words, and what they cannot show.>
+
+## Limitations
+
+<What the data or the methods cannot support.>
+
+## Use of AI
+
+See `AI-LOG.md`.
+
+## References
+
+<The data sources and anything else you used.>
